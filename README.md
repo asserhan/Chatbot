@@ -15,6 +15,7 @@
     source chatbot-env/bin/activate
 
 3. **install dependencies**
+    ```bash
     pip install -r requirements.txt
 
 4. **Verify Installation**
