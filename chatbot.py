@@ -15,9 +15,11 @@ text2 = extract("Data/offering memorandum.pdf")
 #store the extracted text in MongoDB
  
 from pymongo import MongoClient
+import certifi
 
 # Connect to MongoDB
-client = MongoClient('localhost', 27017)
+mongo_uri = 'mongodb+srv://asseraouhanane:FiuVpKyW21wjqK3Y@cluster0.clbewpb.mongodb.net/'
+client = MongoClient(mongo_uri, tlsCAFile=certifi.where())
 db = client['finance_documents']
 collection = db['documents']
 

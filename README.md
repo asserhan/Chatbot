@@ -25,4 +25,5 @@
     python -c "import transformers; print('Transformers version:', transformers.__version__)"
     python -c "import pymongo; print('PyMongo version:', pymongo.__version__)"
     python -c "import langchain; print('LangChain version:', langchain.__version__)"
-    python -c "import fitz; print('PyMuPDF version:', fitz.__doc__)"
+    python -c "import pdfplumber; print('pdfplumber version:', pdfplumber.__version__)"
+
