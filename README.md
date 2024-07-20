@@ -5,10 +5,12 @@
 1. **Clone the Repository**
 
    ```bash
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone https://github.com/asserhan/Chatbot.git
+   cd https://github.com/asserhan/Chatbot.git
 
 2. **set up env**
+
+    ```bash
     python3 -m venv chatbot-env
     source chatbot-env/bin/activate
 
@@ -17,6 +19,7 @@
 
 4. **Verify Installation**
 
+    ```bash
     python -c "import torch; print('PyTorch version:', torch.__version__)"
     python -c "import transformers; print('Transformers version:', transformers.__version__)"
     python -c "import pymongo; print('PyMongo version:', pymongo.__version__)"
