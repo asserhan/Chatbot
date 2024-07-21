@@ -27,3 +27,14 @@
     python -c "import langchain; print('LangChain version:', langchain.__version__)"
     python -c "import pdfplumber; print('pdfplumber version:', pdfplumber.__version__)"
 
+
+5. **MongoDB Setup**
+
+    You need to have MongoDB server running on your local machine. Follow these steps to install and start MongoDB:
+
+    ```bash
+    brew tap mongodb/brew
+    brew install mongodb-community
+    brew services start mongodb-community
+
+

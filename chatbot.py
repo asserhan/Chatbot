@@ -18,8 +18,14 @@ from pymongo import MongoClient
 import certifi
 
 # Connect to MongoDB
-mongo_uri = 'mongodb+srv://asseraouhanane:FiuVpKyW21wjqK3Y@cluster0.clbewpb.mongodb.net/'
-client = MongoClient(mongo_uri, tlsCAFile=certifi.where())
+mongo_uri = "mongodb://localhost:27017/"
+try:
+    client = MongoClient(mongo_uri, serverSelectionTimeoutMS=5000)
+    # Attempt to fetch server information to ensure connectivity
+    client.server_info()
+    print("MongoDB connection successful!")
+except Exception as e:
+    print(f"MongoDB connection error: {e}")
 db = client['finance_documents']
 collection = db['documents']
 
