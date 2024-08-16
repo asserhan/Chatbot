@@ -2,7 +2,7 @@
 chatbot-env/lib/python3.12/site-packages/torch/
 # Ignore virtual environment directory
 chatbot-env/
-
+*.env
 # Ignore Python bytecode
 *.pyc
 __pycache__/

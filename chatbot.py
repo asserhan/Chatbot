@@ -1,5 +1,6 @@
 #extract text from PDF
 import pdfplumber
+import os
 
 def extract(pdf_path):
     text=""
@@ -18,22 +19,32 @@ from pymongo import MongoClient
 import certifi
 
 # Connect to MongoDB
-mongo_uri = "mongodb://localhost:27017/"
+mongo_uri = "mongodb://asseraouhanane:FiuVpKyW21wjqK3Y@ac-3i6jbsi-shard-00-00.clbewpb.mongodb.net:27017,ac-3i6jbsi-shard-00-01.clbewpb.mongodb.net:27017,ac-3i6jbsi-shard-00-02.clbewpb.mongodb.net:27017/finance_documents?ssl=true&authSource=admin&replicaSet=atlas-xtlkxx-shard-0"
+
 try:
-    client = MongoClient(mongo_uri, serverSelectionTimeoutMS=5000)
+    client = MongoClient(mongo_uri, serverSelectionTimeoutMS=5000, tlsCAFile=certifi.where())
     # Attempt to fetch server information to ensure connectivity
     client.server_info()
     print("MongoDB connection successful!")
-except Exception as e:
-    print(f"MongoDB connection error: {e}")
-db = client['finance_documents']
-collection = db['documents']
 
-# Insert the extracted text into MongoDB
-document1 = {"title": "consular insurance", "text": text1}
-document2 = {"title": "offering memorandum", "text": text2}
-collection.insert_one(document1)
-collection.insert_one(document2)
+    db = client['finance_documents']
+    collection = db['documents']
+
+    # Insert the extracted text into MongoDB
+    document1 = {"title": "consular insurance", "text": "text1"}  # Replace "text1" with actual text
+    document2 = {"title": "offering memorandum", "text": "text2"}  # Replace "text2" with actual text
+    
+    result1 = collection.insert_one(document1)
+    result2 = collection.insert_one(document2)
+    
+   
+
+except Exception as e:
+    print(f"MongoDB operation error: {e: any}")
+
+finally:
+    if 'client' in locals():
+        client.close()
 
 #load the pre-trained model
 

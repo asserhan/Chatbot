@@ -1,7 +1,7 @@
-torch==2.2.2
-transformers==4.30.0
-pymongo==4.4.0
-langchain==0.0.1
-pdfplumber==0.11.2
-sentencepiece==0.1.99  # or the latest version available
+torch
+transformers
+pymongo
+langchain
+pdfplumber==0.5.27
+sentencepiece # or the latest version available
 
